@@ -1,0 +1,17 @@
+{
+  "name": "vx-tel",
+  "version": "1.0.0",
+  "description": "Construindo uma API Rest para o produto FaleMais da VxTel em NodeJS utilizando TDD, Clean Architecture e Design Patterns.",
+  "author": "Lucas Lira",
+  "license": "ISC",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "nodemon src/main/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "fast-glob": "^3.1.1",
+    "mongodb": "3.6.5",
+    "nodemon": "^2.0.12"
+  }
+}

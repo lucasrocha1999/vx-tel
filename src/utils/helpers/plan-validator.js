@@ -1,11 +1,14 @@
 const MissingParamError = require('../errors/missing-param-error')
 
 module.exports = class PlanValidator {
-  isValid (plan) {
+  constructor ({ loadPlanTableRepository } = {}) {
+    this.loadPlanTableRepository = loadPlanTableRepository
+  }
+  async isValid (plan) {
     if (!plan) {
       throw new MissingParamError('plan')
     }
-    // [TO-DO] - check if the plan is valid
-    return true
+    const checkIsValid = await this.loadPlanTableRepository.load(plan)
+    return !!checkIsValid
   }
 }

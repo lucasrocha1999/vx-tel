@@ -1,4 +1,4 @@
-const { MissingParamError, InvalidParamError } = require('../../utils/errors')
+const { InvalidParamError } = require('../../utils/errors')
 
 module.exports = class CalculatorUseCase {
   constructor ({ loadPriceTableRepository, loadPlanTableRepository } = {}) {
@@ -7,15 +7,6 @@ module.exports = class CalculatorUseCase {
   }
 
   async calculate ({cityCodeOrigin, cityCodeDestination, callTime, plan}) {
-    if (!cityCodeOrigin)
-      throw new MissingParamError('cityCodeOrigin')
-    if (!cityCodeDestination)
-      throw new MissingParamError('cityCodeDestination')
-    if (!callTime)
-      throw new MissingParamError('callTime')
-    if (!plan)
-      throw new MissingParamError('plan')
-
     const percentage = 1.1
     let withSpeakMore = 0
     let noSpeakMore = 0
@@ -23,6 +14,7 @@ module.exports = class CalculatorUseCase {
     const { valor } = await this.loadPriceTableRepository.load(cityCodeOrigin, cityCodeDestination)
     if (!valor)
       throw new InvalidParamError('cityCodeOrigin/cityCodeDestination')
+      
     const { tempo } = await this.loadPlanTableRepository.load(plan)
     if (!tempo)
       throw new InvalidParamError('plan')

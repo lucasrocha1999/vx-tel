@@ -1,27 +1,29 @@
 const { InvalidParamError } = require('../../utils/errors')
 
 module.exports = class CalculatorUseCase {
-  constructor ({ loadPriceTableRepository, loadPlanTableRepository } = {}) {
-    this.loadPriceTableRepository = loadPriceTableRepository
+  constructor ({ loadValueTableRepository, loadPlanTableRepository } = {}) {
+    this.loadValueTableRepository = loadValueTableRepository
     this.loadPlanTableRepository = loadPlanTableRepository
   }
 
-  async calculate ({cityCodeOrigin, cityCodeDestination, callTime, plan}) {
+  async calculate ({ cityCodeOrigin, cityCodeDestination, callTime, plan }) {
     const percentage = 1.1
     let withSpeakMore = 0
     let noSpeakMore = 0
 
-    const { valor } = await this.loadPriceTableRepository.load(cityCodeOrigin, cityCodeDestination)
-    if (!valor)
+    const responseValue = await this.loadValueTableRepository.load(cityCodeOrigin, cityCodeDestination)
+    if (!responseValue) {
       throw new InvalidParamError('cityCodeOrigin/cityCodeDestination')
-      
-    const { tempo } = await this.loadPlanTableRepository.load(plan)
-    if (!tempo)
-      throw new InvalidParamError('plan')
+    }
 
+    const reposnsePlan = await this.loadPlanTableRepository.load(plan)
+
+    const { valor } = responseValue
+    const { tempo } = reposnsePlan
     if (parseInt(callTime) <= tempo) {
       noSpeakMore = valor * callTime
-    } else {
+    }
+    if (parseInt(callTime) > tempo) {
       const overflow = parseInt(callTime) - tempo
       withSpeakMore = (valor * overflow) * percentage
       noSpeakMore = valor * parseInt(callTime)

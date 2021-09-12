@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "6137f69274dd50e8f8f96cee"
+  },
+  "plano": "FaleMais 30",
+  "tempo": 30
+},{
+  "_id": {
+    "$oid": "6137f6e474dd50e8f8f96cef"
+  },
+  "plano": "FaleMais 60",
+  "tempo": 60
+},{
+  "_id": {
+    "$oid": "6137f70574dd50e8f8f96cf0"
+  },
+  "plano": "FaleMais 120",
+  "tempo": 120
+}]

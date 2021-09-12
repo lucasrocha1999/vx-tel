@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "6137f5c174dd50e8f8f96ce6"
+  },
+  "origem": "011",
+  "destino": "016",
+  "valor": 1.9
+},{
+  "_id": {
+    "$oid": "6137f5d274dd50e8f8f96ce7"
+  },
+  "origem": "016",
+  "destino": "011",
+  "valor": 2.9
+},{
+  "_id": {
+    "$oid": "6137f5eb74dd50e8f8f96ce8"
+  },
+  "origem": "011",
+  "destino": "017",
+  "valor": 1.7
+},{
+  "_id": {
+    "$oid": "6137f60674dd50e8f8f96ce9"
+  },
+  "origem": "017",
+  "destino": "011",
+  "valor": 2.7
+},{
+  "_id": {
+    "$oid": "6137f62774dd50e8f8f96cea"
+  },
+  "origem": "011",
+  "destino": "018",
+  "valor": 0.9
+},{
+  "_id": {
+    "$oid": "6137f64074dd50e8f8f96ceb"
+  },
+  "origem": "018",
+  "destino": "011",
+  "valor": 1.9
+}]

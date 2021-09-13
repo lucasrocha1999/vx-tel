@@ -17,22 +17,22 @@ Using SOLID development standards<br /><br />
 
 ## Requirements
 
-A empresa de telefonia VxTel, especializada em chamadas de longa distância nacional, vai
-colocar um novo produto no mercado chamado FaleMais.
-Normalmente um cliente VxTel pode fazer uma chamada de uma cidade para outra pagando
-uma tarifa fixa por minuto, com o preço sendo pré-definido em uma lista com os códigos DDDs
-de origem e destino.
+The telephone company VxTel, specialized in national long distance calls, will
+put a new product on the market called FaleMais.
+Normally a VxTel client can make a call from one city to another by paying a fixed rate per minute, with the price
+a fixed rate per minute, with the price being predefined in a list with the DDDs codes of origin and destination.
+codes of origin and destination.
 
-Com o novo produto FaleMais da VxTel o cliente adquire um plano e pode falar de graça até
-um determinado tempo (em minutos) e só́ paga os minutos excedentes. Os minutos
-excedentes tem um acrescimo de 10% sobre a tarifa normal do minuto. Os planos são
-FaleMais 30 (30 minutos), FaleMais 60 (60 minutos) e FaleMais 120 (120 minutos).
-A VxTel, preocupada com a transparência junto aos seus clientes, quer disponibilizar uma
-página na web onde o cliente pode calcular o valor da ligação. Ali, o cliente pode escolher os
-códigos das cidades de origem e destino, o tempo da ligação em minutos e escolher qual o
-plano FaleMais. O sistema deve mostrar dois valores: (1) o valor da ligação com o plano e (2)
-sem o plano. O custo inicial de aquisição do plano deve ser desconsiderado para este
-problema. 
+With VxTel's new FaleMais product, the client acquires a plan and can talk for free up to a certain
+a certain time (in minutes) and only pays for the exceeding minutes. The excess
+minutes have an increase of 10% on the normal rate of the minute. The plans are
+FaleMais 30 (30 minutes), FaleMais 60 (60 minutes) and FaleMais 120 (120 minutes).
+VxTel, concerned about transparency with its clients, wants to make available a
+web page where the client can calculate the value of the call. There, the client can choose the
+the codes of the cities of origin and destination, the time of the call in minutes and choose which
+FaleMais plan. The system should show two values: (1) the value of the call with the plan and (2)
+without the plan. The initial cost of purchasing the plan should be disregarded for this
+problem. 
 
 ## Technologies
 
@@ -58,6 +58,11 @@ To execute the project just execute the following commands:
 
 ### Run
 ```bash
+# install
+$ npm install
+or 
+$ yarn
+
 # development
 $ npm run start
 or 
